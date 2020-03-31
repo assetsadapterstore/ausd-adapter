@@ -16,11 +16,11 @@ package ausd
 
 import (
 	"github.com/assetsadapterstore/xpay-adapter/xpay"
-	"github.com/blocktree/openwallet/log"
+	"github.com/blocktree/openwallet/v2/log"
 )
 
 const (
-	Symbol    = "AUSD"
+	Symbol = "AUSD"
 )
 
 type WalletManager struct {

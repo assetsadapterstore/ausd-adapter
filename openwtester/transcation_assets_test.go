@@ -16,12 +16,12 @@
 package openwtester
 
 import (
-	"github.com/blocktree/openwallet/openw"
+	"github.com/blocktree/openwallet/v2/openw"
 	"testing"
 	"time"
 
-	"github.com/blocktree/openwallet/log"
-	"github.com/blocktree/openwallet/openwallet"
+	"github.com/blocktree/openwallet/v2/log"
+	"github.com/blocktree/openwallet/v2/openwallet"
 )
 
 func testGetAssetsAccountBalance(tm *openw.WalletManager, walletID, accountID string) {
@@ -121,7 +121,7 @@ func testSubmitTransactionStep(tm *openw.WalletManager, rawTx *openwallet.RawTra
 func TestTransfer(t *testing.T) {
 
 	addrs := []string{
-		"03091620fd077333c332b44b187d8a872a52b2b5c1528dda6990cc6c0812e11512",
+		//"03091620fd077333c332b44b187d8a872a52b2b5c1528dda6990cc6c0812e11512",
 		//"03b31a6e7b8256bf83ed97d9ffa76c710203da8fca9bca7f4c597046ec3a424ee1",
 		//"035d5ecf5ed551367aeca8b60ffd68456e4712b930b9be918b03442c99c256f8d1",
 		//"036e471b45022b235c2cba725a322ee430d299ae047a8a7b3f7fb342029a692d2a",
@@ -131,6 +131,8 @@ func TestTransfer(t *testing.T) {
 		//"03453a263a5321a83f1386a97529992a982552f4f10439593ce051076149776b11",
 		//"0256da0db7209272c4e1b0e1e63917eda531aff7b9bfc67e00fee30f03f388fcbf",
 		//"03f2e4cef427fbf35167a606f562e88f9ab22157d198bb3504a0e99c6c3ce9adab",
+
+		"0260e030e4bedfedadad03b7570053b1f14f11dbfd0c9829a315b7cd50c906827d",
 	}
 
 	tm := testInitWalletManager()
@@ -141,7 +143,7 @@ func TestTransfer(t *testing.T) {
 
 	for _, to := range addrs {
 
-		rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "1", "", nil)
+		rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.1", "", nil)
 		if err != nil {
 			return
 		}
